@@ -46,10 +46,15 @@
     ?>
 
     <!-- ヘッダー -->
-    <header class="p-3 bg-secondary text-white position-relative">
-        <h1 class="position-absolute top-50 start-50 translate-middle">日報記録</h1>
-        <div class="text-end">
-            <button type="button" class="btn btn-outline-light me-2">Logout</button>
+    <header class="bg-secondary text-white">
+        <div class="container">
+            <nav class="navbar d-flex justify-content-center align-items-center position-relative">
+                <label class="fs-2">日報一覧</label>
+                <div class="px-3 position-absolute top-50 end-0 translate-middle-y">
+                    <button type="button" class="btn btn-outline-light"
+                            onclick="location.href='../Logout/logout.php'">Logout</button>
+                </div>
+            </nav>
         </div>
     </header>
 
