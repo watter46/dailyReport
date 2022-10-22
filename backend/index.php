@@ -19,6 +19,7 @@
     <a href="./Pages/Login/login.php">Login画面</a>
     <a href="./Pages/Logout/logout.php">Logout画面</a>
     <a href="./Pages/Register/register.php">Register画面</a>
+    <a href="./Pages/SelectEmployee/selectEmployee.php">社員選択画面</a>
 </body>
 
 </html>
