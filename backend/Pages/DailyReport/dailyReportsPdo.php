@@ -1,21 +1,7 @@
 <?php
-
 declare(strict_types=1);
 
-require_once('./changeDate.php');
-
-$dsn = 'mysql:dbname=php_local;host=db;charset=utf8';
-$user = 'phper';
-$password = 'secret';
-
-try {
-    $dbh = new PDO($dsn, $user, $password);
-    $stmt = $dbh->query('SELECT * FROM daily_reports');
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo "接続失敗: " . $e->getMessage() . "\n";
-    exit();
-}
+namespace Pages\DailyReport;
 
 /* 現在の年月を取得 */
 $changeDate_yearAndMonth = new ChangeDate(date('Y-n'));

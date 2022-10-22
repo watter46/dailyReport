@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Logic;
+
 final class ChangeDate
 {
     public function __construct(private string $timestamp)
