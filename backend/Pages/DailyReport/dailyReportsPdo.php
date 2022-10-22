@@ -3,6 +3,12 @@ declare(strict_types=1);
 
 namespace Pages\DailyReport;
 
+use Logic\ChangeDate;
+
+require_once('./getDailyReports.php');
+require_once('../../Logic/changeDate.php');
+
+
 /* 現在の年月を取得 */
 $changeDate_yearAndMonth = new ChangeDate(date('Y-n'));
 

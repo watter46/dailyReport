@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Config;
 
+use PDO;
+
 /* データベース設定 */
 define('DB_DSN', 'mysql:dbname=php_local; host=db;charset=utf8');
 define('DB_USER', 'phper');

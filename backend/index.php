@@ -13,8 +13,12 @@
 </head>
 
 <body>
-    <a href="./logic/daily_reports.php">日報一覧画面</a>
-    <a href="./dailyReport_edit.php">日報編集画面</a>
+    <h1>UI表示テスト</h1>
+    <a href="./Pages/DailyReport/daily_reports.php">日報一覧画面</a>
+    <a href="./Pages/EditDailyReport/dailyReport_edit.php">日報編集画面</a>
+    <a href="./Pages/Login/login.php">Login画面</a>
+    <a href="./Pages/Logout/logout.php">Logout画面</a>
+    <a href="./Pages/Register/register.php">Register画面</a>
 </body>
 
 </html>
