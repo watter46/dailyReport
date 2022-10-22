@@ -25,11 +25,11 @@
             <form>
                 <div class="mb-3">
                     <label for="employee_number" class="form-label fs-3 text-secondary">Employee Number</label>
-                    <input type="email" class="form-control" id="employee_number">
+                    <input type="text" class="form-control" id="employee_number">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label fs-3 text-secondary">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="password" class="form-label fs-3 text-secondary">Password</label>
+                    <input type="password" class="form-control" id="password">
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="passwordCheck">
