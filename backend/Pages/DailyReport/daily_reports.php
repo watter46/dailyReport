@@ -42,7 +42,7 @@
 
 <body>
     <?php
-    require_once('./dailyReportsPdo.php');
+    require_once('./dailyReportsDto.php');
     ?>
 
     <!-- ヘッダー -->
