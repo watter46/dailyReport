@@ -21,7 +21,7 @@
 
 <body>
     <main class="container w-75 d-flex align-items-center justify-content-center">
-        <div class="w-75 h-50 p-4 border border-2 border-secondary d-flex align-items-center">
+        <div class="w-75 h-60 p-4 border border-2 border-secondary d-flex align-items-center">
             <form class="w-100">
                 <div class="mb-3">
                     <label for="Name" class="form-label fs-3 text-secondary">Name</label>
