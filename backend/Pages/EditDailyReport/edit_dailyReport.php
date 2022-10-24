@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <style>
         html,
         body {
@@ -21,7 +20,7 @@
         main {
             height: 90%;
         }
-        
+
         .previous-btn {
             background: transparent;
             border: none;
@@ -35,40 +34,44 @@
             outline: none;
         }
     </style>
-    
-    <title>Document</title>
 
+    <title>日報編集ページ</title>
 </head>
 
-<body>
-    <?php
-        require_once('./dailyReportsDto.php');
-    ?>
+<!-- ヘッダー（ナビゲーション） -->
+<header class="bg-secondary text-white">
+    <div class="container">
+        <nav class="navbar d-flex justify-content-center align-items-center position-relative">
+            <div class="px-3 position-absolute top-50 start-0 translate-middle-y">
+            <button type="button" class="btn btn-outline-light"
+                    onclick="location.href='../Register/register.php'">社員登録</button>
+            </div>
+            <label class="fs-2">日報編集</label>
+            <div class="px-3 position-absolute top-50 end-0 translate-middle-y">
+                <button type="button" class="btn btn-outline-light"
+                        onclick="location.href='../Logout/logout.php'">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
 
-    <!-- ヘッダー -->
-    <header class="bg-secondary text-white">
-        <div class="container">
-            <nav class="navbar d-flex justify-content-center align-items-center position-relative">
-                <label class="fs-2">日報一覧</label>
-                <div class="px-3 position-absolute top-50 end-0 translate-middle-y">
-                    <button type="button" class="btn btn-outline-light"
-                            onclick="location.href='../Logout/logout.php'">Logout</button>
-                </div>
-            </nav>
-        </div>
-    </header>
+<body>
+    
+    <?php require_once('./editDailyReportsDto.php'); ?>
+
 
     <main class="container-fluid d-flex justify-content-center">
         <div class="w-75 d-flex justify-content-center position-relative">
-            <!-- 年月を表示 -->
-            <div class="container">
+            <div class="container bg-danger">
+                <!-- 選択された社員 -->
                 <div class="row">
                     <div class="col d-flex justify-content-center align-items-center">
-                        <button type="button" class="fs-2 previous-btn">&#9664;</button>
-                        <h2 class="mx-5 mt-2">
-                            <strong><?php echo $yearAndMonth; ?></strong>
+                        <h2 class="mx-3 mt-2">
+                            <strong><?php echo $employeeNumber; ?></strong>
                         </h2>
-                        <button type="button" class="fs-2 next-btn">&#9654;</button>
+                        <h2 class="mx-3 mt-2">
+                            <strong><?php echo $name; ?></strong>
+                        </h2>
                     </div>
                 </div>
 
@@ -81,6 +84,7 @@
                             <th scope="col">終業</th>
                             <th scope="col">休憩</th>
                             <th scope="col">業務内容</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,38 +95,24 @@
                                 <td><?php echo $dailyReport['endTime']; ?></td>
                                 <td><?php echo $dailyReport['breakTime']; ?></td>
                                 <td><?php echo $dailyReport['summary']; ?></td>
+                                <td>
+                                    <form>
+                                        <button type="button" class="btn btn-success"
+                                                id="<?php echo $dailyReport['id']; ?>"
+                                                onclick="onEdit(this)">編集</button>
+                                    </form>
+                                </td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
                 </table>
-
-                <div class="container px-4 mb-4 position-absolute bottom-0 start-50 translate-middle-x">
-                    <div class="w-100 gx-5">
-                        <input type="button" class="btn btn-secondary w-100" onclick="is_start(this)" value="出勤">
-                    </div>
-                </div>
-
             </div>
         </div>
     </main>
-
-    <script>
-        const is_start = (obj) => {
-            if (obj.getAttribute('value') === "出勤") {
-                obj.setAttribute('value', "退勤");
-                return;
-            } 
-
-            if (obj.getAttribute('value') === "退勤") {
-                const is_end = () => confirm('退勤しますか?');
-                
-                if (!is_end()) return;
-
-                obj.setAttribute('value', "出勤");
-                return;
-            }
-        }
-    </script>
+<script>
+    const onEdit = (obj) => {
+        console.log(obj);
+    }
+</script>
 </body>
-
 </html>

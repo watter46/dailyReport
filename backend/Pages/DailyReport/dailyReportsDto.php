@@ -3,10 +3,12 @@ declare(strict_types=1);
 
 namespace Pages\DailyReport;
 
+require('vendor/autoload.php');
+
 use Logic\ChangeDate;
 
-require_once('./getDailyReports.php');
-require_once('../../Logic/changeDate.php');
+// require_once('./getDailyReports.php');
+// require_once('../../Logic/changeDate.php');
 
 
 /* 現在の年月を取得 */
