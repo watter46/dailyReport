@@ -15,11 +15,17 @@
 <body>
     <h1>UI表示テスト</h1>
     <a href="./Pages/DailyReport/daily_reports.php">日報一覧画面</a>
-    <a href="./Pages/EditDailyReport/dailyReport_edit.php">日報編集画面</a>
+    <a href="./Pages/EditDailyReport/edit_dailyReport.php">日報編集画面</a>
     <a href="./Pages/Login/login.php">Login画面</a>
     <a href="./Pages/Logout/logout.php">Logout画面</a>
     <a href="./Pages/Register/register.php">Register画面</a>
     <a href="./Pages/SelectEmployee/selectEmployee.php">社員選択画面</a>
+    <a href="./test.php">テスト</a><br>
+
+    <?php
+        // require('Packages/Application/DailyReport/GetAll.php');
+        require('vendor/autoload.php');
+    ?>
 </body>
 
 </html>

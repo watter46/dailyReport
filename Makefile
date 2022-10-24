@@ -24,6 +24,8 @@ destroy-volumes:
 	docker compose down --volumes --remove-orphans
 ps:
 	docker ps -a --no-trunc
+load:
+	docker compose exec app composer dump-autoload 
 logs:
 	docker compose logs
 logs-watch:
